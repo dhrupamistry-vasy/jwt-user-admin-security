@@ -45,10 +45,10 @@
 </head>
 <body>
 <div class="container container-size">
-    <h3> Sign Up Page </h3>
+    <h3>Employee Registration Form</h3>
     <form action="/signup" method="post">
     <div class="form-group">
-        <label>Name :</label>
+        <label>Name of the employee :</label>
         <input class="form-control" type="text" name="name" />
     </div>
     <div class="form-group">
@@ -62,6 +62,19 @@
     <div class="form-group">
         <label>Password :</label>
         <input class="form-control" type="password" name="password" />
+    </div>
+    <div class="form-group">
+        <label>Contact Number :</label>
+        <input class="form-control" type="text" name="contactno" />
+    </div>
+    <div class="form-group">
+        <label>Address :</label>
+        <input class="form-control" type="text" name="address" />
+    </div>
+
+    <div class="form-group">
+        <label>City :</label>
+        <input class="form-control" type="text" name="city" />
     </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

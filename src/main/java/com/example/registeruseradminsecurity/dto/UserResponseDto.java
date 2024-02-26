@@ -12,4 +12,8 @@ public class UserResponseDto {
     private String username;
     private String name;
     private String email;
+    private String contactno;
+
+    private String address;
+    private String city;
 }

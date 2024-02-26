@@ -3,7 +3,10 @@ package com.example.registeruseradminsecurity.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,6 +20,8 @@ import java.util.stream.Collectors;
 @Entity
 @Table(name = "users")
 @Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class User implements UserDetails {
@@ -32,6 +37,10 @@ public class User implements UserDetails {
     private String email;
     @Column(nullable = false)
     private String password;
+    private String contactno;
+    private String address;
+    private String city;
+
     @ManyToMany
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<Role> roles;
