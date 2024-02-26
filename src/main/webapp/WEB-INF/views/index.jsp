@@ -60,8 +60,9 @@
                 <label>Password :</label>
                 <input class="form-control" type="password" name="password" />
             </div>
+          
+
             <input class="btn btn-primary" value="SignIn" type="submit"/>
-            <button class="btn btn-primary" onclick="location.href='/forgot-password';" type="button">Forget Password</button>
         </form>
         <br />
         <div class="row">
@@ -69,7 +70,7 @@
                 <a href="/signup"><button class="btn btn-primary btn-block">SignUp</button></a>
             </div>
             <div class="col">
-                <button class="btn btn-primary btn-block" onclick="location.href='/about-us';" type="button">About Us</button>
+                <button class="btn btn-primary btn-block" onclick="location.href='/aboutUs';" type="button">About Us</button>
             </div>
         </div>
     </div>

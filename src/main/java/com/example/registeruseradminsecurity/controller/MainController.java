@@ -44,7 +44,7 @@ public class MainController {
         return new ModelAndView("index");
     }
 
-    @GetMapping("/user-Page")
+    @GetMapping("/userPage")
     public ModelAndView userPage(HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("userPage");
         modelAndView.addObject("Token",
@@ -52,14 +52,14 @@ public class MainController {
         return modelAndView;
     }
 
-    @GetMapping("/user-Page/info")
+    @GetMapping("/userPage/info")
     public UserResponseDto getUserInfo(HttpServletRequest request) {
         UserDetails user = userService.loadUserByUsername(jwtService.extractUsername(
                 request.getHeader(SecurityConstants.HEADER_NAME).replace(SecurityConstants.HEADER_PREFIX, "")));
         return modelMapper.map(user, UserResponseDto.class);
     }
 
-    @GetMapping("/admin-Page")
+    @GetMapping("/adminPage")
     public ModelAndView adminPage(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView modelAndView = new ModelAndView("adminPage");
         response.addHeader("Token",
@@ -69,17 +69,17 @@ public class MainController {
         return modelAndView;
     }
 
-    @GetMapping("/admin-Page/info")
+    @GetMapping("/adminPage/info")
     public List<UserResponseDto> getAllusersInfo(HttpServletRequest request) {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/sign-up")
+    @GetMapping("/signup")
     public ModelAndView signUpPage() {
         return new ModelAndView("signUp");
     }
 
-    @PostMapping("/sign-up")
+    @PostMapping("/signup")
     public ModelAndView createUser(UserDto userDto) {
         userService.addNewUser(userDto);
         return new ModelAndView("index");
@@ -102,6 +102,11 @@ public class MainController {
             throw new UsernameNotFoundException("invalid user request !");
         }
         return modelAndView;
+    }
+
+    @GetMapping("/aboutUs")
+    public ModelAndView aboutUsPage() {
+        return new ModelAndView("aboutUs");
     }
 
 }
